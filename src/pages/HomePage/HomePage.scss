@@ -1,0 +1,107 @@
+.home-page-container {
+    width: 100vw;
+    height: 90vh;
+    .weather-container {
+        width: 80%;
+        height: 90%;
+        @media (max-width: 450px) {
+            justify-content: center;
+            height: 100%;
+        }
+        .search-weather-container {
+            width: 45%;
+            height: 6%;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            @media (max-width: 1000px) {
+                width: 55%;
+            }
+            @media (max-width: 450px) {
+                width: 70%;
+            }
+            .search-weather {
+                width: 90%;
+                height: 100%;
+                border: none;
+                outline: none;
+                border-radius: 5px 0 0 5px;
+                background-color: none;
+                padding-left: 15px;
+            }
+            .search-icon-container {
+                width: 10%;
+                height: 100%;
+                @media (max-width: 1000px) {
+                    width: 15%;
+                }
+                @media (max-width: 450px) {
+                    width: 22%;
+                }
+            }
+        }
+        .weekly-weather-container {
+            width: 100%;
+            height: 80%;
+            background-color: #3eaab578;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+            margin-top: 20px;
+            @media (max-width: 450px) {
+                height: 75%;
+            }
+            .top-container-in-weekly-weather {
+                width: 90%;
+                height: 140px;
+                .current-weather-display {
+                    width: 20%;
+                    height: 55%;
+                    font-weight: bold;
+                    @media (max-width: 600px) {
+                        width: 25%;
+                        font-size: 0.9rem;
+                    }
+                    .city-current-weather {
+                        text-align: start;
+                    }
+                    .city-current-degrees {
+                        text-align: start;
+                    }
+                }
+                .add-to-favorite-container {
+                    height: 25%;
+                    align-items: center;
+                    width: 213px;
+                    justify-content: space-between;
+                    @media (max-width: 450px) {
+                        height: 22%;
+                        width: 200px;
+                    }
+                    .add-or-remove-from-favorite-btn {
+                        width: 185px;
+                        height: 100%;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        transition: 0.3s ease-in-out;
+                        background-color: #ffffff91;
+                        color: #000000;
+                        font-size: 0.9rem;
+                        @media (max-width: 450px) {
+                            width: 172px;
+                            height: 94%;
+                            font-size: 0.9rem;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.025);
+                        }
+                    }
+                }
+            }
+            .bottom-container-in-weekly-weather {
+                width: 90%;
+                height: 200px;
+            }
+        }
+    }
+}

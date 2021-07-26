@@ -1,0 +1,10 @@
+.favorite-weather-text{
+    margin-bottom: 14%;
+}
+
+.top-favorite-description-container{
+    text-align: center;
+    @media (max-width: 830px) {
+        margin-top: 14%;
+    }
+}
