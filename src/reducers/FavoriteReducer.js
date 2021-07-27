@@ -1,11 +1,5 @@
-
-
 const initialState = {
-    favorites: [
-        { city: 'Tel Aviv', id: '215854', degrees: '39' },
-        { city: 'Tel Aviv', id: '215854', degrees: '39' },
-        { city: 'Tel Aviv', id: '215854', degrees: '39' }
-    ],
+    favorites: [],
     pickedFavorite: null
 };
 

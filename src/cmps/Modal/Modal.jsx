@@ -11,7 +11,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function AlertDialogSlide(props) {
 
     const [open, setOpen] = React.useState(false);
-
+   
+    // Open or close modal upon prop isOpen.
     useEffect(() => {
         if(props.isOpen.open){
             handleClickOpen();
@@ -24,6 +25,7 @@ export default function AlertDialogSlide(props) {
         setOpen(true);
     };
 
+    // On close modal call setIsOpenFalse function in Home page.
     const handleClose = () => {
         props.setIsOpenFalse();
         setOpen(false);
@@ -39,6 +41,7 @@ export default function AlertDialogSlide(props) {
                 aria-labelledby="alert-dialog-slide-title"
                 aria-describedby="alert-dialog-slide-description"
             >
+                {/* set modal content */}
                 <DialogTitle id="alert-dialog-slide-title">{props.isOpen.title}</DialogTitle>
                 <DialogContent>
                 </DialogContent>

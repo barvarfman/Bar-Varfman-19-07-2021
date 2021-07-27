@@ -6,16 +6,24 @@ import { updatePickedFavorite } from "../../actions/FavoriteActions.js"
 import weatherService from '../../services/weatherService.js'
 export function _FavoritePage(props) {
 
-  // const [advertiseContent, setAdvertiseContent] = useState('')
+  const [favorites, setFavorites] = useState('')
 
-  // useEffect(() => {
-  //   (async () => {
-  //     // let currentWeather = await weatherService.getCurrentWeather(currentWeatherDisplay.id)
-  //     // let degrees = `${currentWeather[0].Temperature.Metric.Value}${degreeSymbol}c`;
-     
-  //   })()
-  // }, [])
+  // When mount get the current weather details for display.
+  useEffect(() => {
+    (async () => {
+      let currentFavoritesWeather = await  weatherService.getCurrentWeatherForFavoritesDisplay(props.favorites);
+        setFavorites(currentFavoritesWeather)
+    })()
+  }, [])
 
+  // Evey time unit type changes, update all favorites cards.
+  useEffect(() => {
+    if (favorites) {
+      setFavorites(weatherService.swapDegreesByUnitTypeForFavorites(favorites, props.unitType));
+    }
+  }, [props.unitType])
+
+// Update the picked city to display in the store, and go back to home page
   function updatePickedFavorite(favorite) {
     props.history.push('/');
     props.updatePickedFavorite(favorite)
@@ -24,7 +32,8 @@ export function _FavoritePage(props) {
   return (
     <main className="main-favorite-container">
       <div className="favorite-container">
-        <FavoriteList favorites={props.favorites} updatePickedFavorite={updatePickedFavorite} />
+        {/* need to be just favorites */}
+        <FavoriteList favorites={favorites} unitType={props.unitType} updatePickedFavorite={updatePickedFavorite} />
       </div>
     </main>
   );
@@ -33,6 +42,7 @@ export function _FavoritePage(props) {
 function mapStateProps(state) {
   return {
     favorites: state.FavoriteReducer.favorites,
+    unitType: state.WeatherReducer.unitType
   }
 }
 

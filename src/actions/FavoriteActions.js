@@ -1,5 +1,4 @@
 
-
 export function addFavorite(favorite) {
     return async dispatch => {
         try {
@@ -53,3 +52,5 @@ function _updatePickedFavorite(favorite) {
         favorite
     };
 }
+
+

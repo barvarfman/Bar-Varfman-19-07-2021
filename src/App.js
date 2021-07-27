@@ -5,31 +5,11 @@ import './styles/style.scss'
 import { HomePage } from './pages/HomePage/HomePage.jsx';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage.jsx';
 import  {HeaderApp}  from './cmps/HeaderApp/HeaderApp.jsx';
-
+import {Cloud} from "./cmps/Cloud/Cloud.jsx"
 function App() {
   return (
     <div className="App">
-      <div id="background-wrap">
-        <div class="x1">
-          <div class="cloud"></div>
-        </div>
-
-        <div class="x2">
-          <div class="cloud"></div>
-        </div>
-
-        <div class="x3">
-          <div class="cloud"></div>
-        </div>
-
-        <div class="x4">
-          <div class="cloud"></div>
-        </div>
-
-        <div class="x5">
-          <div class="cloud"></div>
-        </div>
-      </div>
+      <Cloud/>
       <Router history={history}>
         <HeaderApp></HeaderApp>
         <Switch>

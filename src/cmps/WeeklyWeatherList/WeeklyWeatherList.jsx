@@ -4,39 +4,18 @@ import utilsService from "../../services/utilsService";
 import { WeeklyWeatherPreview } from "../WeeklyWeatherPreview/WeeklyWeatherPreview";
 export function WeeklyWeatherList(props) {
 
-  const degreeSymbol = '°'
-  // /need to use props.fiveDays
-  var arr = [
-    {
-      day: 'Sun',
-      degrees: `32${degreeSymbol}c`
-    },
-    {
-      day: 'Sun',
-      degrees: `32${degreeSymbol}c`
-    },
-    {
-      day: 'Sun',
-      degrees: `32${degreeSymbol}c`
-    },
-    {
-      day: 'Sun',
-      degrees: `32${degreeSymbol}c`
-    },
-    {
-      day: 'Sun',
-      degrees: `32${degreeSymbol}c`
-    },
-  ]
+
   return (
     <div className="weather-list-container flex align-center space-between">
       {
-        // props.fiveDays &&
-        arr.map(day => {
+        //If fiveDays prop have value, then render all saved favorites.
+        props.fiveDays &&
+        props.fiveDays.map(day => {
           let id = utilsService.idGen()
           return (
             <div className="daily-whther-card flex column justify-center align-center" key={id}>
-              <WeeklyWeatherPreview day={day} />
+            {/* pass unit type and each day of the five to WeeklyWeatherPreview component */}
+              <WeeklyWeatherPreview day={day} unitType={props.unitType} />
             </div>
           )
         })

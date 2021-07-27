@@ -4,19 +4,45 @@
     color: #f6f6f6;
     margin-block-end: 1rem;
     box-shadow: 0px 7px 10px #00000033;
-    .logo {
-        height: 2.4rem;;
-        font-family: "Pacifico", cursive;
-        margin-inline-start: 1rem;
-        color: #ec4e6d;
-        font-weight: bold;
-        font-size: 1.5rem;
-        transition: 0.3s;
-        &:hover {
-            color: lighten(#ec4e6d, 5);
-        }
+    .header-left-container {
+        width: 220px;
         @media (max-width: 600px) {
-            font-size: 1.3rem;
+            width: 202px;
+        }
+        .logo {
+            height: 2.4rem;
+            font-family: "Pacifico", cursive;
+            margin-inline-start: 1rem;
+            color: #ec4e6d;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            &:hover {
+                color: lighten(#ec4e6d, 5);
+            }
+            @media (max-width: 600px) {
+                font-size: 1.3rem;
+            }
+        }
+        .unit-type {
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            margin-top: 3px;
+            font-weight: bold;
+            transition: 0.1s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.025);
+            }
+            @media (max-width: 600px) {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                width: 29px;
+                height: 29px;
+                font-size: 0.9rem;
+            }
         }
     }
     .main-nav {
