@@ -17,7 +17,7 @@ const apiKey = 'b6Q9LTBO14ATtPxCAazoTXOph38n42Zc'
 
 async function getCurrentWeather(cityKey) {
     try {
-        const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${apiKey}&language=en-us&details=false`);
+        const response = await axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${apiKey}&language=en-us&details=false`);
         const data = response.data;
         return data;
     } catch (errors) {
@@ -27,7 +27,7 @@ async function getCurrentWeather(cityKey) {
 
 async function getlocationDetails(location) {
     try {
-        const response = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&language=en-us&q=${location}`);
+        const response = await axios.get(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&language=en-us&q=${location}`);
         const data = response.data;
         return data;
     } catch (errors) {
@@ -38,7 +38,7 @@ async function getlocationDetails(location) {
 
 async function getFiveDays(cityKey) {
     try {
-        const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${apiKey}&language=en-us&details=false&metric=false`);
+        const response = await axios.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${apiKey}&language=en-us&details=false&metric=false`);
         const data = response.data;
         return data;
     } catch (errors) {
@@ -80,7 +80,7 @@ async function getCurrentWeatherForFavoritesDisplay(favorites) {
 
 async function getlocationDetailsByPos(pos) {
     try {
-        const response = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${apiKey}&language=en-us&details=false&toplevel=false&q=${pos.lat},${pos.lon}`);
+        const response = await axios.get(`https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${apiKey}&language=en-us&details=false&toplevel=false&q=${pos.lat},${pos.lon}`);
         const data = response.data;
         const currentWeather = await getCurrentWeather(data.Key);
         return {
