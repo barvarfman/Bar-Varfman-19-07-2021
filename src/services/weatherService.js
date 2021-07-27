@@ -12,7 +12,7 @@ export default {
 }
 
 
-const apiKey = 'b6Q9LTBO14ATtPxCAazoTXOph38n42Zc'
+const apiKey = 'CyHsYvF6nwnOOkk49IAUzeycDJRrqcca'
 
 
 async function getCurrentWeather(cityKey) {
